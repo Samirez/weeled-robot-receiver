@@ -49,8 +49,8 @@ radio.onReceivedNumberDeprecated(function (receivedNumber) {
         motobit.enable(MotorPower.Off)
     } else if (receivedNumber == 4) {
         motobit.enable(MotorPower.On)
-        for (let index = 0; index < 4; index++) {
-            motobit.setMotorSpeed(Motor.Left, MotorDirection.Forward, 50)
+        for (let index = 0; index < 10000; index++) {
+            motobit.setMotorSpeed(Motor.Left, MotorDirection.Forward, 100)
         }
         motobit.enable(MotorPower.Off)
     }
