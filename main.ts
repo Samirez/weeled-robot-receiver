@@ -47,12 +47,15 @@ radio.onReceivedNumberDeprecated(function (receivedNumber) {
             . . . # .
             `)
         motobit.enable(MotorPower.Off)
+    } else if (receivedNumber == 4) {
+        motobit.enable(MotorPower.On)
+        for (let index = 0; index < 4; index++) {
+            motobit.setMotorSpeed(Motor.Left, MotorDirection.Forward, 50)
+        }
+        motobit.enable(MotorPower.Off)
     }
     basic.clearScreen()
 })
 radio.setGroup(2)
 motobit.invert(Motor.Left, false)
 motobit.invert(Motor.Right, true)
-basic.forever(function () {
-	
-})
